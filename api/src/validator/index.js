@@ -1,4 +1,4 @@
-const { check, validationResult } = require('express-validator');
+const { check } = require('express-validator');
 exports.create = [
   check('name').notEmpty().withMessage('The name field is required'),
   check('weight').notEmpty().withMessage('The weight field is required'),
