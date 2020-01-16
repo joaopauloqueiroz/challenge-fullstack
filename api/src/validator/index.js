@@ -3,6 +3,7 @@ exports.create = [
   check('name').notEmpty().withMessage('The name field is required'),
   check('weight').notEmpty().withMessage('The weight field is required'),
   check('address.public_place').notEmpty().withMessage('The public_place field is required'),
+  check('address.street').notEmpty().withMessage('The street field is required'),
   check('address.number').notEmpty().withMessage('The number field is required'),
   check('address.number').isNumeric().withMessage('The number field is not a number'),
   check('address.neighborhood').notEmpty().withMessage('The neighborhood field is required'),
