@@ -4,19 +4,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
   <title>Document</title>
 </head>
 
 <body ng-controller="deliveries">
-  <h1>{{ name }}</h1>
-  <div ng-init="init()">
+  <div class="container">
+    <div class="row wrapper-father">
+      <div ng-init="init()" class="form-left">
+        <div class="wrapper row">
+          <input type="text" ng-model="name" placeholder="Nome do Cliente">
+          <input type="number" ng-model="weight" placeholder="Peso da Entrega">
+  
+          <div class="wrapper-address">
+            <input type="text" ng-model="address" placeholder="Endereço da entrega">
+            <u ng-click="findAddress()" class="text-find">BUSCAR</u>
+          </div>
+  
+          <div class="row lat-long">
+            <input ng-disabled="true" placeholder="Latitude">
+            <input ng-disabled="true" placeholder="Longitude">
+          </div>
+        </div>
+  
+        <div class="row reset-register">
+          <button ng-click="removeAll()">CADASTRAR CLIENTE</button>
+        </div>
+      </div>
+  
+      <div class="row reset-all">
+        <button ng-click="findAddress()">RESETAR CADASTRO</button>
+      </div>
+    </div>
 
+    <div class="row container-right">
+      <div id="map"></div>
+      <div class="info-items">
+        <span>Total de clientes: {{}}; Peso Total: {{4.52}} kg; Ticket Médio*: 301,4</span>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Rua</th>
+            <th>Cidade</th>
+            <th>Pais</th>
+            <th>Peso</th>
+            <th>Lat</th>
+            <th>Lng</th>
+          </tr>
+        </thead>
+        {{allDeliveries}}
+        <tbody>
+          <tr ng-repeat="(key, value) in allDeliveries">
+              <td>{{value.name}}</td>
+              <td>{{value.address.street}}</td>
+              <td>{{value.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-
-  <input type="text" ng-model="address">
-  <button ng-click="findAddress()">buscar</button>
+  
   <script src="./lib/angular.min.js"></script>
   <script src="./controllers/deliveriesController.js"></script>
   <script src="./services/deliveriesService.js"></script>
+
+  <!-- cdn maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+  <script src="./map/map.js"></script>
 </body>
 </html>

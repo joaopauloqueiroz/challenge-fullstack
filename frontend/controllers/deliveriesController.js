@@ -1,12 +1,15 @@
 const app = angular.module('app', []);
 app.controller('deliveries', function($scope, deliveriesService, $http) {
-  $scope.name = "eu joão";
+  $scope.name = "";
+  $scope.weight = "";
   $scope.address = "";
   $scope.formAddress = {};
+  $scope.allDeliveries = new Array();
 
  $scope.init = async function() {
     const data = await deliveriesService.listDeliveries()
-    // console.log(data)
+    $scope.allDeliveries = data
+    console.log(data)
  }
 
  $scope.findAddress = async function() {
@@ -16,6 +19,10 @@ app.controller('deliveries', function($scope, deliveriesService, $http) {
 
   //  $scope.formAddress.public_place = data[2]
   //  console.log($scope.formAddress)
- } 
+ }
+ 
+ $scope.removeAll = async function () {
+   const response = await deliveriesService.removeAll()
+ }
 })
 

@@ -7,4 +7,8 @@ app.service('deliveriesService', function ($http) {
   this.getAddress = function(address) {
     return $http.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${address},+CA&key=AIzaSyCEYIGOcgru2noH5loO938ZKRSGyfvhN78`)
   }
+
+  this.removeAll = function () {
+    return $http.delete('http://localhost:3333/deliveries')
+  }
 })

@@ -1,0 +1,142 @@
+.container {
+  background-color: #f8f8f8;
+  display: flex;
+  padding-bottom: 20px !important;
+}
+.wrapper-address {
+  display: flex;
+  width: 95%;
+  align-items: center;
+}
+
+.wrapper-father {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper-address input{
+  padding-right: 80px !important;
+}
+
+.form-left {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  margin: 15px;
+  align-items: center;
+  background-color: #f2f2f2;
+  border: 1px solid #cecece;
+  border-radius: 8px;
+}
+
+.form-left input {
+  outline: 0;
+  padding: 8px;
+  border-radius: 3px;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  position: relative;
+  width: 90%;
+}
+
+.container-right {
+  height: auto;
+  width: 100%;
+  margin-top: 0px;
+  margin-top: 15px;
+  margin-right: 15px;
+}
+#map {
+  height: 60vh;
+  border: 1px solid #cecece;
+  border-radius: 3px;
+}
+
+.wrapper {
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.text-find {
+  position: absolute;
+  margin-left: 250px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.lat-long  {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.lat-long >input {
+  width: 40%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.reset-register {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 95%;
+  height: 30px;
+  cursor: pointer;
+  background-color: #3cbc8d;
+  outline: 0;
+  border: 1px solid #9c9c9c;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.reset-all {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  border: 1px solid #cecece;
+  border-radius: 3px;
+  min-height: 20%;
+  max-height: 20%;
+}
+
+.reset-all > button {
+  background-color: #ff0000;
+}
+
+table {
+  width: 100%;
+}
+
+table tr > th{
+  background-color: #a5a5a5;
+  padding: 10px;
+  font-weight: bold;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 1.167em;
+}
+
+.info-items {
+  margin-top: 10px;
+}
+
+.info-items > span {
+  color: #595959;
+  font-family: Roboto, sans-serif;
+}
