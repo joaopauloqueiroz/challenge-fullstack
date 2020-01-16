@@ -14,6 +14,10 @@ const DeliverySchema = new Schema({
       type: String,
       required: true
     },
+    street: {
+      type: String,
+      required: true
+    },
     number: {
       type: Number,
       required: true
