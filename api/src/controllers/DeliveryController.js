@@ -35,7 +35,6 @@ module.exports = {
   },
   async destroy (req, res) {
     const { id } = req.params;
-    console.log(id)
     await Delivery.deleteOne({_id: id})
     return res.status(200).json({ success: true })
   },

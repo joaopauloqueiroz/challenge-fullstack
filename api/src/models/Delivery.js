@@ -7,35 +7,29 @@ const DeliverySchema = new Schema({
   },
   weight: {
     type: Number,
-    required: true
+    required: true,
   },
   address: {
     street: {
-      type: String,
-      required: true
+      type: String
     },
     number: {
-      type: Number,
-      required: true
+      type: Number
     },
     neighborhood: {
-      type: String,
-      required: true
+      type: String
     },
     complement: {
       type: String
     },
     city: {
-      type: String,
-      required: true
+      type: String
     },
     state: {
-      type: String,
-      required: true
+      type: String
     },
     country: {
-      type: String,
-      required: true
+      type: String
     }
   },
   geolocation: {
