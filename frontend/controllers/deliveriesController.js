@@ -27,7 +27,7 @@ app.controller('deliveries', function($scope, deliveriesService, $http) {
       total = total + $scope.allDeliveries[x].weight;
     }
     $scope.weightTotal = total;
-    $scope.ticket = $scope.allDeliveries.length / $scope.weightTotal;
+    $scope.ticket = $scope.allDeliveries.length / $scope.weightTotal
   }
 
   $scope.findAddress = function () {
