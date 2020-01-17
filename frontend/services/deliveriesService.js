@@ -11,4 +11,8 @@ app.service('deliveriesService', function ($http) {
   this.removeAll = function () {
     return $http.delete('http://localhost:3333/deliveries')
   }
+
+  this.removeOne = function (id) {
+    return $http.delete(`http://localhost:3333/deliveries/${id}`)
+  }
 })

@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="./assets/css/styles.css">
-  <title>Document</title>
+  <title>ROUTEASY</title>
 </head>
 
 <body ng-controller="deliveries">
   <div class="container">
     <div class="row wrapper-father">
-      <div ng-init="init()" class="form-left">
+      <div class="form-left">
         <div class="wrapper row">
           <input type="text" ng-model="name" placeholder="Nome do Cliente">
           <input type="number" ng-model="weight" placeholder="Peso da Entrega">
@@ -34,16 +34,16 @@
       </div>
   
       <div class="row reset-all">
-        <button ng-click="findAddress()">RESETAR CADASTRO</button>
+        <button ng-click="removeAll()">RESETAR CADASTRO</button>
       </div>
     </div>
 
     <div class="row container-right">
       <div id="map"></div>
       <div class="info-items">
-        <span>Total de clientes: {{}}; Peso Total: {{4.52}} kg; Ticket Médio*: 301,4</span>
+        <span>Total de clientes: {{allDeliveries.length}}; Peso Total: {{weightTotal}} kg; Ticket Médio*: {{ticket}}</span>
       </div>
-      <table class="table">
+      <table class="table" ng-init="init()">
         <thead>
           <tr>
             <th>Nome</th>
@@ -53,14 +53,24 @@
             <th>Peso</th>
             <th>Lat</th>
             <th>Lng</th>
+            <th>Ação</th>
           </tr>
         </thead>
-        {{allDeliveries}}
+
         <tbody>
-          <tr ng-repeat="(key, value) in allDeliveries">
+          <tr  ng-repeat="(key, value) in allDeliveries">
               <td>{{value.name}}</td>
               <td>{{value.address.street}}</td>
-              <td>{{value.name}}</td>
+              <td>{{value.address.city}}</td>
+              <td>{{value.address.country}}</td>
+              <td>{{value.weight}} Kg</td>
+              <td>{{value.geolocation.latitude}}</td>
+              <td>{{value.geolocation.longitude}}</td>
+              <td>
+                <button ng-click="removeOne(value._id)">
+                  DELETE
+                </button>
+              </td>
           </tr>
         </tbody>
       </table>
