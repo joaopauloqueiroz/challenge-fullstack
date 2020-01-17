@@ -134,6 +134,7 @@ table tr > th{
 
 table > tbody > tr > td {
   background-color: #f0f0f0;
+  text-align: center;
 }
 
 table > tbody > tr > td > button{
@@ -147,4 +148,68 @@ table > tbody > tr > td > button{
 .info-items > span {
   color: #595959;
   font-family: Roboto, sans-serif;
+}
+
+.errors {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  width: 23vw;
+  padding: 5px;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+.custom-pin {
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50% 50% 50% 0;
+  background: #000;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+  animation-name: bounce;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  font-size: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number-item {
+  transform: rotate(45deg);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end !important;
+}
+
+@media only screen and (max-width: 930px)  {
+  .container {
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.button {
+  float: right;
+  width: 50px !important;
+  border-radius: 0 !important;
+  border-left: 0px !important;
+  background-color: #fff;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: center;
+}
+.input {
+  overflow: hidden;
+  padding: 0 3px 0 0;
+}
+.input input {
+  width: 100%
 }
