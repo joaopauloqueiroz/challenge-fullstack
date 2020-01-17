@@ -4,32 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="./assets/css/styles.css">
   <title>ROUTEASY</title>
 </head>
 
 <body ng-controller="deliveries">
+  <div class="first-title">
+    <h1>Challenge Routeasy</h1>
+  </div>
   <div class="container">
     <div class="row wrapper-father">
       <div class="form-left">
         <div class="wrapper row">
+          <div ng-if="errors">
+            <div ng-repeat="(key, value) in errors">
+              <div class="errors">{{value.msg}}</div>
+            </div>
+          </div>
           <input type="text" ng-model="name" placeholder="Nome do Cliente">
           <input type="number" ng-model="weight" placeholder="Peso da Entrega">
-  
           <div class="wrapper-address">
-            <input type="text" ng-model="address" placeholder="Endereço da entrega">
-            <u ng-click="findAddress()" class="text-find">BUSCAR</u>
+            <div class="input">
+              <input ng-model="address" type="text" placeholder="Endereço cliente" />
+            </div>
+            <input class="button" type="submit" ng-click="findAddress()" value="BUSCAR" />
           </div>
-  
           <div class="row lat-long">
-            <input ng-disabled="true" placeholder="Latitude">
-            <input ng-disabled="true" placeholder="Longitude">
+            <input ng-disabled="true" ng-model="latitude" value="latitude" placeholder="Latitude">
+            <input ng-disabled="true" ng-model="longitude" value="longitude" placeholder="Longitude">
           </div>
         </div>
   
         <div class="row reset-register">
-          <button ng-click="removeAll()">CADASTRAR CLIENTE</button>
+          <button ng-click="registerClient()">CADASTRAR CLIENTE</button>
         </div>
       </div>
   
@@ -68,7 +75,7 @@
               <td>{{value.geolocation.longitude}}</td>
               <td>
                 <button ng-click="removeOne(value._id)">
-                  DELETE
+                  DELETAR
                 </button>
               </td>
           </tr>
