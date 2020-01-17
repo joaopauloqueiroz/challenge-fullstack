@@ -10,10 +10,6 @@ const DeliverySchema = new Schema({
     required: true
   },
   address: {
-    public_place: {
-      type: String,
-      required: true
-    },
     street: {
       type: String,
       required: true
