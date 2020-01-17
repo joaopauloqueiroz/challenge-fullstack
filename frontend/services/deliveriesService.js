@@ -15,4 +15,8 @@ app.service('deliveriesService', function ($http) {
   this.removeOne = function (id) {
     return $http.delete(`http://localhost:3333/deliveries/${id}`)
   }
+
+  this.registerClient = function (data) {
+    return $http.post(`http://localhost:3333/deliveries`, data)
+  }
 })
